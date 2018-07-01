@@ -30,7 +30,7 @@ return [
             ],
         ],
         'discovery' => [
-            'name' => 'user',
+            'name' => 'email',
             'dc' => 'dc',
             'near' => '',
             'tag' => '',

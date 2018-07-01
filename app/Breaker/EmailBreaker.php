@@ -19,7 +19,7 @@ use Swoft\Sg\Circuit\CircuitBreaker;
  *
  * @Breaker("email")
  */
-class EmailBreaker extends DefaultBreaker
+class EmailBreaker extends ServiceBreaker
 {
 
 }

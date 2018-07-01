@@ -18,7 +18,7 @@ use Swoft\Rpc\Client\Pool\ServicePool;
 /**
  * the pool of user service
  *
- * @Pool(name="user")
+ * @Pool(name="email")
  */
 class EmailServicePool extends ServicePool
 {

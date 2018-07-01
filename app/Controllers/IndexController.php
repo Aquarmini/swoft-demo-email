@@ -17,6 +17,8 @@ use Swoft\Http\Server\Bean\Annotation\RequestMethod;
 use Swoft\View\Bean\Annotation\View;
 use Swoft\Http\Message\Server\Response;
 use Swoft\Http\Message\Server\Request;
+use Swoft\Rpc\Client\Bean\Annotation\Reference;
+use App\Lib\EmailInterface;
 
 /**
  * Class IndexController
@@ -25,6 +27,14 @@ use Swoft\Http\Message\Server\Request;
  */
 class IndexController extends BaseController
 {
+
+    /**
+     * @Reference(name="email", fallback="emailFallback")
+     *
+     * @var EmailInterface
+     */
+    private $emailService;
+
     /**
      * @RequestMapping(route="/", method={RequestMethod::GET,RequestMethod::POST})
      */
@@ -36,5 +46,14 @@ class IndexController extends BaseController
             return $this->response->success($data);
         }
         return view('index/index', $data);
+    }
+
+    /**
+     * @RequestMapping(route="/version", method={RequestMethod::GET,RequestMethod::POST})
+     */
+    public function version()
+    {
+        $version = $this->emailService->version();
+        return $this->response->success($version);
     }
 }

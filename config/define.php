@@ -10,7 +10,7 @@
 
 !defined('DS') && define('DS', DIRECTORY_SEPARATOR);
 // App name
-!defined('APP_NAME') && define('APP_NAME', 'Swoft');
+!defined('APP_NAME') && define('APP_NAME', 'Swoft Demo Email');
 // Project base path
 !defined('BASE_PATH') && define('BASE_PATH', dirname(__DIR__, 1));
 
